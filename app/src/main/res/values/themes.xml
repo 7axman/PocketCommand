@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.PocketCommand" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#669900</item>
+        <item name="android:statusBarColor">#000000</item>
+    </style>
+</resources>

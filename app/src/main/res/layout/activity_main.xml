@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <!-- Connectivity Header -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCHING FOR REMOTE..."
+        android:textColor="#FF8800"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- TX Battery Progress -->
+    <ProgressBar
+        android:id="@+id/progressTxBat"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TX BAT"
+        android:textColor="#AAAAAA"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/progressTxBat"
+        app:layout_constraintTop_toBottomOf="@id/progressTxBat" />
+
+    <!-- Main Voltage Gauge -->
+    <TextView
+        android:id="@+id/txtRxVolt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0V"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txtStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMPRESSOR POWER"
+        android:textColor="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/txtRxVolt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Machine State Banner -->
+    <TextView
+        android:id="@+id/txtState"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#444444"
+        android:gravity="center"
+        android:text="IDLE (OFF)"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txtRxVolt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp" />
+
+    <!-- Control Grid -->
+    <LinearLayout
+        android:id="@+id/controlGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/txtState"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:text="START\nENGINE"
+            android:backgroundTint="#669900"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnLoad"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:text="TOGGLE\nLOAD"
+            android:backgroundTint="#0099CC"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCrank"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="MANUAL CRANK OVERRIDE"
+        android:textColor="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/controlGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Emergency Kill Switch -->
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:text="STOP SYSTEM"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:backgroundTint="#CC0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

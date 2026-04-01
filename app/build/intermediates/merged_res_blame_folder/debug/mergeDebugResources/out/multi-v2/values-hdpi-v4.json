@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.sevenaxman.pocketcommand.app-mergeDebugResources-29:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/pvp/.gradle/caches/9.3.1/transforms/f12dd15e9e7657bc760c730eda9537e7/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

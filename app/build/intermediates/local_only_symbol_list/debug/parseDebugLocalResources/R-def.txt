@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+id btnCrank
+id btnLoad
+id btnStart
+id btnStop
+id controlGrid
+id progressTxBat
+id txtRxVolt
+id txtState
+id txtStatus
+layout activity_main
+string app_name
+style Theme.PocketCommand
+xml device_filter

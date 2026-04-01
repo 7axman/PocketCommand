@@ -1,0 +1,8 @@
+com.sevenaxman.pocketcommand.app-pngs-0 /Users/pvp/REPO/C4/android_app/app/build/generated/res/pngs/debug
+com.sevenaxman.pocketcommand.app-resValues-1 /Users/pvp/REPO/C4/android_app/app/build/generated/res/resValues/debug
+com.sevenaxman.pocketcommand.app-updated_navigation_xml-2 /Users/pvp/REPO/C4/android_app/app/build/generated/updated_navigation_xml/debug
+com.sevenaxman.pocketcommand.app-packageDebugResources-3 /Users/pvp/REPO/C4/android_app/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.sevenaxman.pocketcommand.app-packageDebugResources-4 /Users/pvp/REPO/C4/android_app/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.sevenaxman.pocketcommand.app-debug-5 /Users/pvp/REPO/C4/android_app/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.sevenaxman.pocketcommand.app-debug-6 /Users/pvp/REPO/C4/android_app/app/src/debug/res
+com.sevenaxman.pocketcommand.app-main-7 /Users/pvp/REPO/C4/android_app/app/src/main/res
