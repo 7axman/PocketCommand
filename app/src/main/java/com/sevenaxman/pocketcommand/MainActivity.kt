@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity(), SerialInputOutputManager.Listener {
     private var usbIoManager: SerialInputOutputManager? = null
 
     private lateinit var txtRxVolt: TextView
+    private lateinit var txtTxVolt: TextView
+    private lateinit var txtSignal: TextView
     private lateinit var txtState: TextView
     private lateinit var progressTxBat: ProgressBar
     private lateinit var txtStatus: TextView
@@ -52,6 +54,8 @@ class MainActivity : AppCompatActivity(), SerialInputOutputManager.Listener {
         setContentView(R.layout.activity_main)
 
         txtRxVolt = findViewById(R.id.txtRxVolt)
+        txtTxVolt = findViewById(R.id.txtTxVolt)
+        txtSignal = findViewById(R.id.txtSignal)
         txtState = findViewById(R.id.txtState)
         progressTxBat = findViewById(R.id.progressTxBat)
         txtStatus = findViewById(R.id.txtStatus)
@@ -118,18 +122,22 @@ class MainActivity : AppCompatActivity(), SerialInputOutputManager.Listener {
 
     private fun processTelemetry(message: String) {
         val parts = message.substring(5).trim().split(",")
-        if (parts.size >= 4) {
+        if (parts.size >= 6) {
             mainHandler.post {
                 try {
                     val txMv = parts[0].toInt()
                     val rxV = parts[1].toFloat()
                     val stateIdx = parts[2].toInt()
                     val r3 = parts[3].toInt()
+                    val rssi = parts[4].toInt()
+                    val snr = parts[5].toInt()
 
                     txtRxVolt.text = "${rxV}V"
+                    txtTxVolt.text = String.format("%.2fV", txMv / 1000.0)
+                    txtSignal.text = "SIGNAL: -${rssi} dBm / ${snr} SNR"
                     
-                    // TX Bat calculation (assuming Li-ion 3.3V-4.2V)
-                    val pct = ((txMv - 3300) * 100 / 900).coerceIn(0, 100)
+                    // TX Bat calculation (assuming Li-ion 3.4V-4.2V based on project mandate)
+                    val pct = ((txMv - 3400) * 100 / 800).coerceIn(0, 100)
                     progressTxBat.progress = pct
 
                     val state = State.values().getOrElse(stateIdx % 16) { State.ERROR }
